@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_state_management/counter_model.dart';
 import 'package:flutter_state_management/home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+    create: (context) => CounterModel(),
+    child: const MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
