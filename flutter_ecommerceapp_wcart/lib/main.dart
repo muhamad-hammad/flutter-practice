@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerceapp_wcart/pages/intro_page.dart';
+import 'package:flutter_ecommerceapp_wcart/pages/shop_page.dart';
+import 'package:flutter_ecommerceapp_wcart/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+      home: const IntroPage(),
+      theme: lightMode,
+      routes: {
+        '/intro_page' : (context) => const IntroPage(),
+        '/shop_page' : (context) => const ShopPage(),
+      },
     );
   }
 }
