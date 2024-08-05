@@ -37,27 +37,27 @@ class Shop extends ChangeNotifier {
   ];
 
   // list of shoes in cart
-  List<Product> userCart = [];
+  List<Product> cart = [];
 
-  // get list of shoes for sale
-  List<Product> getShoeList() {
+  // gRet list of items for sale
+  List<Product> getList() {
     return shop;
   }
 
   // get list of items in cart
-  List<Product> getUserCart() {
-    return userCart;
+  List<Product> getCart() {
+    return cart;
   }
 
   // add items to cart
   void addToCart(Product item) {
-    userCart.add(item);
+    cart.add(item);
     notifyListeners();
   }
 
   // remove items from cart
   void removeItemFromCart(Product item) {
-    userCart.remove(item);
+    cart.remove(item);
     notifyListeners();
   }
 }

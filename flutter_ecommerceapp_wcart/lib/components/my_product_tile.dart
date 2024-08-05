@@ -15,12 +15,12 @@ class MyProductTile extends StatelessWidget {
   void addToCart(BuildContext context){
     //show a dialog box to ask user to configure to add to cart
     showDialog(context: context, builder: (context) => AlertDialog(
-      content: Text("Add this item to your cart?"),
+      content: const Text("Add this item to your cart?"),
       actions: [
         //cancel button
         MaterialButton(
           onPressed: () =>Navigator.pop(context),
-          child: Text("Cancel"),
+          child: const Text("Cancel"),
         ),
         // yes button
         MaterialButton(
@@ -31,7 +31,7 @@ class MyProductTile extends StatelessWidget {
             // add to cart
             context.read<Shop>().addToCart(product);
           },
-          child: Text("Yes"),
+          child: const Text("Yes"),
           ),
       ],
     ),
@@ -117,8 +117,8 @@ class MyProductTile extends StatelessWidget {
                     // Price
                     Text(
                       '\$${product.price}',
-                      style: TextStyle(
-                        color: Colors.green[700],
+                      style: const TextStyle(
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
