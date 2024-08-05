@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerceapp_wcart/models/shop.dart';
 import 'package:flutter_ecommerceapp_wcart/pages/cart_page.dart';
 import 'package:flutter_ecommerceapp_wcart/pages/intro_page.dart';
 import 'package:flutter_ecommerceapp_wcart/pages/shop_page.dart';
 import 'package:flutter_ecommerceapp_wcart/theme/theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Shop(),
+      child: const MyApp(),
+    ),
+
+  );
 }
 
 class MyApp extends StatelessWidget {
